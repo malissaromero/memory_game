@@ -5,36 +5,72 @@
 
   <link href="style.css" rel="stylesheet">
   <script src="script.js"></script>
-  <script src="path/to/vanilla.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
 </head>
 <body>
-
-  <script>
-
-
-
-
-
-  </script>
-
 
   <div class="mainPage">
       <div class="header">
         <h1>Memory Game</h1>
       </div>
+        <div class="play-game-button">
+          <button class="start"> Get Playin'</button>
+        </div>
+        <div class="roundedBorder">
         <div class="cardContainer">
+          <div class="card">test </div>
           <div class="card"> </div>
+          <div class="card">test </div>
           <div class="card"> </div>
+          <div class="card">test </div>
           <div class="card"> </div>
+          <div class="card"> face</div>
           <div class="card"> </div>
-          <div class="card"> </div>
-          <div class="card"> </div>
-          <div class="card"> </div>
-          <div class="card"> </div>
-          <div class="card"> </div>
+          <div class="card"> face</div>
         </div>
         <div class="button">Button</div>
+        </div>
+
   </div>
+
+    <script>
+      $(document).ready(function(){
+        console.log('window loaded up');
+        $(".card").hide().delay(7000).fadeIn(2500);
+        $(".start").click(function(){
+          console.log("you hit me");
+        });
+        $(".card").click(function (){
+          $(this).hide()delay(1000);
+        });
+      });
+
+
+
+      /*
+      });
+      $(".start").click(function(){
+        $(".card").hide().delay(10000);
+      });
+      $(".card").hover(function() {
+        console.log("hovering here");
+      });
+      $(".card").hover(function() {
+        $(".card").css('opacity', 0.4);
+      });
+      $(".card").click(function() {
+        $(".card").css('opacity', 1.0);
+      });*/
+
+
+
+
+
+
+
+
+    </script>
 
 </body>
 </html>

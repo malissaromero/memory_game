@@ -2,7 +2,21 @@
   border: 5px solid black;
   width: 120px;
 }
+.play-game-button {
+  display: inline-block;
+  border: 5px solid black;
+  width: 120px;
+  text-align: center;
+}
+.roundedBorder {
+  border: 3px solid black;
+  padding: 20px;
+  width: 85%;
+  height: 65%;
+  border-radius: 25px;
+  position: relative;
 
+}
 .cardContainer {
   text-align: center;
 }
@@ -10,10 +24,11 @@
 .header {
   text-align: center;
 }
-.personObject {
+.card {
   display: inline-block;
   width: 25%;
   height: 75px;
   margin: 10px;
   border: 3px solid grey;
+  opacity: 0.4;
 }

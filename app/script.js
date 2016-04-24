@@ -1,15 +1,15 @@
-document.getElementById('photoInput').addEventListener('change', readURL, true);
-function readURL() {
-   var file = document.getElementById("photoInput").files[0];
-   var reader = new FileReader();
-   reader.onloadend = function(){
-      document.getElementById('photo').style.backgroundImage = "url(" + reader.result + ")";
-   }
-   if(file) {
-      reader.readAsDataURL(file);
-    } else {
-    }
-}
+// document.getElementById('photoInput').addEventListener('change', readURL, true);
+// function readURL() {
+//    var file = document.getElementById("photoInput").files[0];
+//    var reader = new FileReader();
+//    reader.onloadend = function(){
+//       document.getElementById('photo').style.backgroundImage = "url(" + reader.result + ")";
+//    }
+//    if(file) {
+//       reader.readAsDataURL(file);
+//     } else {
+//     }
+// }
 
 // var submit = document.getElementsByClassName('submit')[0];
 //
@@ -30,29 +30,55 @@ function addUserData (event) {
       errorCount++;
     }
   });
-
   if (errorCount === 0) {
     var newUserData = {
-      'user': $('.addUserDataInput fieldset input .nameInput').val(),
-      'relativeName': $('.addUserDataInput fieldset input .relativeInput').val(),
-      'photo': $('addUserDataInput fieldset input .photoInput').val()
+      'user': $('#nameInput').val(),
+      'relativeName': $('#relativeInput').val(),
+      'photo': $('#photoInput').val()
     }
+
+    console.log(newUserData)
 
     $.ajax({
       type: 'POST',
       data: newUserData,
-      url: '/users/adduserdata',
+      url: '/users',
       dataType: 'JSON'
     }).done(function(response) {
-      if (response.message === '') {
-        $('.addUserDataInput fieldset input').val('');
-        populateTable();
-      } else {
-        alert('Error: ' + response.message);
-      }
+      // if (response.message === '') {
+      $('.addUserDataInput input').val('');
+      // populateTable();
+      // console.log(populateTable())
+      // } else {
+      //   console.log('Error: ' + response.message);
+      // }
     });
   } else {
-    alert('Please fill in all fields');
+    console.log('Please fill in all fields');
     return false;
   }
 };
+
+$.ajax({
+  type: 'GET',
+  url: '/users',
+  dataType: 'JSON'
+}).done(function(response) {
+  var userData = response[0];
+  console.log(userData.user)
+  $('.card1').append("<a href="+ userData.photo + "></a>" + "<h1>" + userData.name + "<h1>")
+
+  $('.delete').on('click', deleteData);
+
+  function deleteData (){
+    $.ajax({
+      type: 'DELETE',
+      url: '/users/' + response[0],
+      dataType: 'JSON',
+      success: function(result) {
+        console.log("deleted")
+      }
+    })
+  }
+
+})

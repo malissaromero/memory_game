@@ -17,12 +17,15 @@ router.use(function (request, response, next) {
 
 // router.use('/users', data);
 
-router.route('users/adduserdata')
-  .post(function(request, response) {
-    var user = request.body.user;
-    var relativeName = request.body.relativeName;
-    var photo = request.body.photo;
-  });
+// router.post('/users/adduserdata', function(req, res) {
+//     var db = req.db;
+//     var collection = db.get('userlist');
+//     collection.insert(req.body, function(err, result){
+//         res.send(
+//             (err === null) ? { msg: '' } : { msg: err }
+//         );
+//     });
+// });
 
 // GET all messages (using a GET at http://localhost:8080/messages)
 router.route('/users')

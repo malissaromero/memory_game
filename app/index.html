@@ -4,13 +4,57 @@
   <title>Memory Game</title>
 
   <link href="style.css" rel="stylesheet">
-  <script src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
 
 </head>
 <body>
+  <div class=".container header">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>Hello.</h1>
+      </div>
+    </div>
 
-  <div class="mainPage">
+    <div class="row">
+      <div class="col-md-6">
+        <form class="addUserDataInput">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="name" class="form-control" id="nameInput" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="name">Relative Name</label>
+            <input type="name" class="form-control" id="relativeInput" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputFile">Load Images</label>
+            <input type="file" id="photoInput">
+            <!-- <p class="help-block">Example block-level help text here.</p> -->
+          </div>
+          <button type="submit" class="btn btn-default addUserData">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div id="photo">
+        </div>
+        <div class="name">
+          Hello
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- <div class="mainPage">
       <div class="header">
         <h1>Memory Game</h1>
       </div>
@@ -28,9 +72,6 @@
           <div class="card"> face</div>
           <div class="card"> </div>
           <div class="card"> face</div>
-        </div>
-        <div class="button">Button</div>
-        </div>
 
   </div>
 
@@ -70,7 +111,7 @@
 
 
 
-    </script>
-
+    </script> -->
+  <script src="script.js"></script>
 </body>
 </html>

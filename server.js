@@ -2,10 +2,11 @@ var express    = require('express');
 var app        = express();
 var bodyParser = require('body-parser');
 var routes     = require('./routes');
-var path = require('path');
+// var path = require('path');
+// var multer = require('multer');
 
-var mongoose = require("mongoose");
-mongoose.connect('mongodb://localhost/memorydb')
+// var mongoose = require("mongoose");
+// mongoose.connect('mongodb://localhost/memorydb')
 
 app.use(express.static(__dirname + '/app'));
 

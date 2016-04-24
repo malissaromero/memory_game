@@ -57,28 +57,14 @@ function addUserData (event) {
     console.log('Please fill in all fields');
     return false;
   }
+
+  $.ajax({
+    type: 'GET',
+    url: '/users',
+    dataType: 'JSON'
+  }).done(function(response) {
+    var userData = response[0];
+    console.log(userData.user)
+    $('.card1').append("<a href="+ userData.photo + "></a>" + "<h1>" + userData.name + "<h1>")
+  })
 };
-
-$.ajax({
-  type: 'GET',
-  url: '/users',
-  dataType: 'JSON'
-}).done(function(response) {
-  var userData = response[0];
-  console.log(userData.user)
-  $('.card1').append("<a href="+ userData.photo + "></a>" + "<h1>" + userData.name + "<h1>")
-
-  $('.delete').on('click', deleteData);
-
-  function deleteData (){
-    $.ajax({
-      type: 'DELETE',
-      url: '/users/' + response[0],
-      dataType: 'JSON',
-      success: function(result) {
-        console.log("deleted")
-      }
-    })
-  }
-
-})
